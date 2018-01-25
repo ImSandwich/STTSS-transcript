@@ -1,34 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
   <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Corben:700" rel="stylesheet">
   <meta name="viewport"content="width=device-width,initial-scale=1">
   <script></script>
-  <style></style>
+  <style>
+  #bg{
+    z-index: -1;
+    min-height: 100%;
+    min-width: 1024px;
+
+    width: 100%;
+    height: auto;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+    @media screen and (max-width: 1024px) {
+    #bg {
+      left: 50%;
+      margin-left: -512px;
+    }
+   }
+   #box{
+     background: rgba(255,255,255,0.6);
+     position:absolute;
+     top:50%;
+     left:50%;
+     transform: translate(-50%,-50%);
+   }
+   @media screen and (min-width: 900px){
+     #box{
+       height:auto;
+       width:40%;
+     }
+   }
+   .btn{
+     font-family:Corben;
+   }
+  </style>
 </head>
 <body>
-  <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container"id="navbar">
-    <button class="navbar-toggle"data-target=".navbar-responsive-collapse"data-toggle="collapse"type="button">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
 
-    <div class="nav navbar-header">
-    <p id="title"class="navbar-brand">STTSS transcript</p>
+<div class="container-fluid jumbotron" id="box">
+  <div class="alert alert-success" id="alert">
+    <p><strong>Login success!</strong><br>Please select class and subject.</p>
+  </div>
+  <form>
+  <div class="row">
+    <div class="col-md-6">
+      <select class="form-control" id="selclass">
+        <option id="default1">SELECT CLASS</option>
+        <option>J1A</option>
+        <option>J1B</option>
+        <option>J1C</option>
+        <option>J1D</option>
+      </select>
     </div>
-
-    <div class="navbar-collapse collapse navbar-responsive-collapse">
-
-      <ul class="nav navbar-nav navbar-right"id="bars">
-      <li><a href=#><p>1</p></a></li>
-      <li><a href=#><p>2</p></a></li>
-      <li><a href=#><p>3</p></a></li>
-    </ul>
+    <div class="col-md-6">
+      <select class="form-control" id="selsub">
+        <option id="default2">SELECT SUBJECT</option>
+        <option>English</option>
+        <option>Chinese</option>
+        <option>Mathematics</option>
+        <option>Science</option>
+      </select>
     </div>
   </div>
-</nav>
+  <br>
+  <button class="btn btn-primary btn-block" type="submit"><span class="fa fa-paper-plane"></span> Submit</button>
+</form>
+</div>
 
+<img src="#" id="bg">
 </body>
 </html>
