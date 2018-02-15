@@ -30,6 +30,9 @@ if (isset($_POST['Username']) &&
 					$_SESSION['Reg'] = getReg();
 					$_SESSION['Subjects'] = getSubjects();
 					echo 'Logged in!';
+					header("Location: racheltest.php");
+					die();
+
 			}
 			else
 			{						
